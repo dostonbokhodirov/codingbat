@@ -26,3 +26,21 @@ public String getSandwich(String str) {
                                                                     
     return "";
 }
+
+/**
+ * second solution without ant loop...
+ * may be it is better than others...
+ * by dostonbokhodirov
+ */
+private static String getSandwich(String str) {
+    int index1 = str.indexOf("bread");
+    
+    if (index1 < 0) return "";
+    
+    int index2 = str.lastIndexOf("bread");
+    
+    if (index2 > 0 && index1 + 5 != index2)
+        return str.substring(index1 + 5, index2);
+    
+    return "";
+}
